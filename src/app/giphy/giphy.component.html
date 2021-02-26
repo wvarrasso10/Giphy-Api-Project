@@ -1,0 +1,19 @@
+<section class="hero is-medium is-link">
+  <div class="hero-body">
+    <p class="title">
+      Search For A Giph
+    </p>
+    <p class="subtitle">
+      title
+    </p>
+      <div class="input-group">
+        <input class="input" type="text" placeholder="Text input">
+        <button type="button" (click)="onClickMe(giphSearch)" class="btn btn-outline-primary">search</button>
+      </div>
+    <div *ngIf="this.url">
+      <div *ngFor="let product of this.url">
+        <p class="subtitle">Title: {{product}}</p>
+      </div>
+    </div>
+  </div>
+</section>
