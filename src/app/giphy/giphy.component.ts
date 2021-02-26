@@ -13,13 +13,15 @@ export class GiphyComponent implements OnInit {
   giphResult: GiphModel;
   response: ResponseModel;
   giphSearch;
+  searchInput: any;
   url: string[];
   constructor(private giphyService: GiphyService ) {}
 
   ngOnInit(): void {
   }
-  onClickMe(giphSearch: any): void {
-    this.dataFromServer = this.giphyService.getPairings('fun').subscribe (
+  onClickMe(searchInput: string): void {
+    console.log(searchInput);
+    this.dataFromServer = this.giphyService.getPairings(searchInput).subscribe (
       res => {
         this.response = res;
         this.giphSearch = this.response.data;
@@ -29,10 +31,8 @@ export class GiphyComponent implements OnInit {
   }
   storeGiphs(): void {
     this.url = [];
-    console.log(this.giphSearch);
     for (const result of this.giphSearch){
-      this.url.push(result.url);
+      this.url.push(result.images.fixed_width.url);
     }
-    console.log(this.url);
   }
 }

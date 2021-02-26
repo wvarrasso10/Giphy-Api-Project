@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {GiphyService} from './services/giphy.service';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CommonModule} from '@angular/common';
     AppRoutingModule,
     RouterModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [GiphyService],
   bootstrap: [AppComponent]

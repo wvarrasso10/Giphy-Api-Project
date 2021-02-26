@@ -7,13 +7,22 @@
       title
     </p>
       <div class="input-group">
-        <input class="input" type="text" placeholder="Text input">
-        <button type="button" (click)="onClickMe(giphSearch)" class="btn btn-outline-primary">search</button>
+        <input class="input" type="text" placeholder="Text input" [(ngModel)]="searchInput">
+        <button type="button" (click)="onClickMe(searchInput)" class="btn btn-outline-primary">search</button>
       </div>
-    <div *ngIf="this.url">
-      <div *ngFor="let product of this.url">
-        <p class="subtitle">Title: {{product}}</p>
-      </div>
-    </div>
   </div>
 </section>
+    <div class="tile is-ancestor">
+      <div *ngIf="this.url">
+        <div class="tile is-parent " >
+          <div class="tile is-child box is-1" *ngFor="let product of this.url">
+            <img src="{{product}}">
+          </div>
+        </div>
+        <div class="tile is-parent is-danger">
+          <div class="tile is-child box is-4 is-vertical " *ngFor="let product of this.url">
+            <img src="{{product}}">
+          </div>
+        </div>
+      </div>
+    </div>

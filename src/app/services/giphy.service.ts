@@ -14,7 +14,7 @@ export class GiphyService {
   constructor(private http: HttpClient) { }
 
   getPairings(giph: string): Observable<any> {
-    return this.http.get('https://api.giphy.com/v1/gifs/search?api_key=' + myApiKey + 'q=happy&limit=25&offset=0&rating=r&lang=en')
+    return this.http.get('https://api.giphy.com/v1/gifs/search?api_key=' + myApiKey + 'q=' + giph + '&limit=25&offset=0&rating=r&lang=en')
       .pipe(tap((recievedData: ResponseModel) => console.log(recievedData)));
   }
 }
