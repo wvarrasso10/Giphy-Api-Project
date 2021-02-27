@@ -32,7 +32,7 @@ export class GiphyComponent implements OnInit {
   storeGiphs(): void {
     this.url = [];
     for (const result of this.giphSearch){
-      this.url.push(result.images.fixed_width.url);
+      this.url.push(result.images.fixed_height.url);
     }
   }
 }

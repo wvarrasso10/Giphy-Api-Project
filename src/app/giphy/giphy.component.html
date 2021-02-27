@@ -15,13 +15,11 @@
     <div class="tile is-ancestor">
       <div *ngIf="this.url">
         <div class="tile is-parent " >
-          <div class="tile is-child box is-1" *ngFor="let product of this.url">
-            <img src="{{product}}">
+          <div class="columns is-multiline is-one-quarter-desktop">
+          <div class="tile is-child box is-3 is-vertical has-background-danger" *ngFor="let product of this.url">
+
+              <img  src="{{product}}">
           </div>
-        </div>
-        <div class="tile is-parent is-danger">
-          <div class="tile is-child box is-4 is-vertical " *ngFor="let product of this.url">
-            <img src="{{product}}">
           </div>
         </div>
       </div>
